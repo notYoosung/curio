@@ -11,7 +11,7 @@ Containers
 
 Cores
     Support
-    Architecht
+    Architech
     Sci
     Med
     Combat
@@ -20,6 +20,21 @@ Cores
         Flora & fauna?
     Tech
     Explorer/adventurer
+    AS
+
+
+Elements
+    Wind
+    Fire
+    Ice
+    Water
+    Earth
+    Poison
+    Light
+    Darkness
+    Void
+    Gen
+
 
 
 mineclonia/mods/PLAYER/mcl_player/init.lua:128
