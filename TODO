@@ -6,4 +6,24 @@ Containers
     Gauntlets
     Briefcase
     Backpack
-    
+
+
+
+Cores
+    Support
+    Architecht
+    Sci
+    Med
+    Combat
+    Defense
+    Farming
+        Flora & fauna?
+    Tech
+    Explorer/adventurer
+
+
+mineclonia/mods/PLAYER/mcl_player/init.lua:128
+
+Abilities
+    Passive
+    Active
