@@ -50,17 +50,17 @@ curio.inv = {
         meta:set_int("curio_height_" .. listname, height)]]
         local invmetastring = meta:get_string("curio_inv_content")
         if invmetastring ~= "" then
-            magikacia.inv.table_to_inv(inv, minetest.deserialize(invmetastring))
+            curio.inv.table_to_inv(inv, minetest.deserialize(invmetastring))
 
-            itemstack, inv, player = magikacia.on_open_bag(itemstack, inv, player)
-            magikacia.inv.save_bag_inv_itemstack(inv, itemstack)
+            itemstack, inv, player = curio.on_open_bag(itemstack, inv, player)
+            curio.inv.save_bag_inv_itemstack(inv, itemstack)
         end
         return itemstack, inv, player
     end,
     save_bag_inv_itemstack = function(inv, stack, listname)
-        stack, inv = magikacia.on_change_bag_inv(stack, inv)
+        stack, inv = curio.on_change_bag_inv(stack, inv)
         local meta = stack:get_meta()
-        local ser = minetest.serialize(magikacia.inv.inv_to_table(inv))
+        local ser = minetest.serialize(curio.inv.inv_to_table(inv))
         meta:set_string("curio_inv_content", ser)
         return stack
     end,
@@ -74,7 +74,7 @@ curio.inv = {
             local meta = stack:get_meta()
             local stack_id = meta:get_string("curio_bag_identity")
             if stack_id == bag_id then
-                stack = magikacia.inv.save_bag_inv_itemstack(inv, stack)
+                stack = curio.inv.save_bag_inv_itemstack(inv, stack)
                 playerinv:set_stack(playerlistname, i, stack)
             end
         end
