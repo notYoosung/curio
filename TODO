@@ -21,6 +21,7 @@ Cores
     Tech
     Explorer/adventurer
     AS
+    Parkour
 
 
 Elements
@@ -42,3 +43,9 @@ mineclonia/mods/PLAYER/mcl_player/init.lua:128
 Abilities
     Passive
     Active
+
+
+SSCSM
+    Anims
+        Graphics settings - enable/disable; intensity
+    Interactions/control actions?
