@@ -13,6 +13,9 @@ table.merge(curio, {
     registered_on_leaveplayer = {},
     registered_on_joinplayer = {},
     registered_on_player_receive_fields = {},
+    registered_controls_on_press = {},
+    registered_controls_on_release = {},
+    registered_controls_on_hold = {},
     players = {}
 })
 
@@ -135,3 +138,52 @@ function curio.is_obj_static(obj)
         return true
     end
 end
+
+
+--[[
+jump
+right
+left
+LMB
+RMB
+sneak
+aux1
+down
+up
+zoom
+dig
+place
+]]
+
+function curio.register_controls_on_press(id, func)
+    curio.registered_controls_on_press[id] = func
+end
+function curio.register_controls_on_release(id, func)
+    curio.registered_controls_on_release[id] = func
+end
+function curio.register_controls_on_hold(id, func)
+    curio.registered_controls_on_hold[id] = func
+end
+controls.register_on_press(function(player, control_name)
+	-- called on initial key-press
+	-- control_name: see above
+    for k, v in pairs(curio.registered_controls_on_press) do
+        curio.registered_controls_on_press(k, player, control_name)
+    end
+end)
+controls.register_on_release(function(player, control_name, time)
+	-- called on key-release
+	-- control_name: see above
+	-- time: seconds the key was pressed
+    for k, v in pairs(curio.registered_controls_on_release) do
+        curio.registered_controls_on_release(k, player, control_name)
+    end
+end)
+controls.register_on_hold(function(player, control_name, time)
+	-- called every globalstep if the key is pressed
+	-- control_name: see above
+	-- time: seconds the key was pressed
+    for k, v in pairs(curio.registered_controls_on_hold) do
+        curio.registered_controls_on_hold(k, player, control_name)
+    end
+end)
