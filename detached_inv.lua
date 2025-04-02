@@ -135,3 +135,23 @@ local function get_formspec(name, width_main, height_main, width_cores, height_c
     return spellbook_inv_formspec
 end
 
+
+
+local function curio_ccmd_func(player_name, params)
+    core.show_formspec(player_name, "curio:main_fs", get_formspec(player_name))
+end
+
+core.register_chatcommand("c", {
+    params = "",
+    description = "",
+    func = curio_ccmd_func,
+})
+
+core.register_chatcommand("curio", {
+    params = "",
+    description = "",
+    func = curio_ccmd_func,
+})
+
+
+
