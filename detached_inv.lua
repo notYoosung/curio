@@ -102,8 +102,6 @@ curio.inv = {
     end,
 }
 
-
-
 local function get_formspec(name, width_main, height_main, width_cores, height_cores)
     --[[4.125]]
     local magic_inventory_x = 11.75 / 2 - width_main / 2
