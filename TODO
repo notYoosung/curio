@@ -1,30 +1,76 @@
 Trinkets/Curio
 
-
 Containers
-    Satchels
-    Gauntlets
-    Briefcase
+    Satchel
+    Gauntlet
+    Briefcase/suitcase
     Backpack
+    Duffel
+    Handbag
+    Magic bag
+    4th dimension
+    Belt
+    Crown
+    Pockets
 
-
-
-Cores
+Cores (Passive Abilities?)
     Support
+        Tea?
+        Heal, buffs, def
+
     Architech
+        Building
+        Building buffs
+        Holoschem?
+        Autobuild?
     Sci
-    Med
+        Research?
+    Med/healer
+        Regen/heal
+        Resistance?
     Combat
+        Dmg, atk stats
+        Slight physics buffs?
     Defense
+        Shield --> nullify/reduce
+        Regen/self regen?
     Farming
-        Flora & fauna?
+        Flora
+            Fortune?
+            Emergancy bonemal?
+        Fauna
+            Increase prop?
+            Highlight/attraction/lead?
     Tech
+        RS
+        Component highlight/info (power lvl, active, etc?)
     Explorer/adventurer
+        Node highlight?
+        Speed/jump boost?
+        Grapple?
+        Emergancy tools?
     AS
+        Movement
+        Modifications
+        Creation
+        Destruction
     Parkour
+        Double/wall jump
+        Fall dmg reduction?
+        Auto-bucket-clutch w/ cooldown?
+    Ranger
+        B&A?
+    Debuffer?
+        Debuffs
+        Hallucination
+    Warper
+        Tp
+        Location?
+    Weather
+        Clear, rain, snow, ts
+    
 
-
-Elements
+Elements/Enhancements (Active Abilities?)
     Wind
     Fire
     Ice
@@ -35,22 +81,17 @@ Elements
     Darkness
     Void
     Gen
-
-
+    Flora
 
 mineclonia/mods/PLAYER/mcl_player/init.lua:128
 
 Abilities
-    Passive
-    Active
-
+    Passive - fs?
+    Active - containers?
 
 SSCSM
     Anims
         Graphics settings - enable/disable; intensity
     Interactions/control actions?
 
-
 https://github.com/TheIllusiveC4/Curios
-
-
