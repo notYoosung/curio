@@ -28,6 +28,7 @@ Cores (Passive Abilities?)
     Med/healer
         Regen/heal
         Resistance?
+        Highlight hp < hp_max?
     Combat
         Dmg, atk stats
         Slight physics buffs?
@@ -49,6 +50,7 @@ Cores (Passive Abilities?)
         Speed/jump boost?
         Grapple?
         Emergancy tools?
+        Biome finder?
     AS
         Movement
         Modifications
@@ -60,6 +62,8 @@ Cores (Passive Abilities?)
         Auto-bucket-clutch w/ cooldown?
     Ranger
         B&A?
+        Zoom
+        Minimap
     Debuffer?
         Debuffs
         Hallucination
@@ -68,7 +72,24 @@ Cores (Passive Abilities?)
         Location?
     Weather
         Clear, rain, snow, ts
-    
+    Forager?
+        + resources from harvesting/digging
+    Miner
+        Emergancy pick/shovel (multitool?)
+        Highlight ores? visible ores?
+        Dynamic lighting?
+        Fortune?
+    Diver
+        Water breathing?
+        Depth strider
+        Emergancy trident?
+    Pilot?
+        Elytra
+    Chemist
+        Potions
+        Transforming materials?
+    Summoner
+        Entities/golems
 
 Elements/Enhancements (Active Abilities?)
     Wind
