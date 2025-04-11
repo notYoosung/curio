@@ -19,6 +19,8 @@ table.merge(curio, {
     players = {}
 })
 
+curio.register
+
 
 function curio.register_globalstep(id, func)
     curio.registered_globalsteps[id] = func
