@@ -19,40 +19,47 @@ table.merge(curio, {
     players = {}
 })
 
-curio.register
-
-
-function curio.register_globalstep(id, func)
-    curio.registered_globalsteps[id] = func
+function curio.make_registration()
+	local t = {}
+	local registerfunc = function(func)
+		t[#t + 1] = func
+		core.callback_origins[func] = {
+			-- may be nil or return nil
+			-- mod = core.get_current_modname and core.get_current_modname() or "??",
+			name = debug.getinfo(1, "n").name or "??"
+		}
+	end
+	return t, registerfunc
 end
 
-function curio.register_globalstep_slow(id, func)
-    curio.registered_globalsteps_slow[id] = func
+function curio.make_registration_reverse()
+	local t = {}
+	local registerfunc = function(func)
+		table.insert(t, 1, func)
+		core.callback_origins[func] = {
+			-- may be nil or return nil
+			-- mod = core.get_current_modname and core.get_current_modname() or "??",
+			name = debug.getinfo(1, "n").name or "??"
+		}
+	end
+	return t, registerfunc
 end
 
-function curio.register_player_globalstep(id, func)
-    curio.registered_player_globalsteps[id] = func
-end
+curio.registered_globalsteps, curio.register_globalstep = curio.make_registration()
 
-function curio.register_player_globalstep_slow(id, func)
-    curio.registered_player_globalsteps_slow[id] = func
-end
+curio.registered_globalsteps_slow, curio.register_globalstep_slow = curio.make_registration()
 
-function curio.register_damage_modifier(id, func)
-    curio.registered_damage_modifiers[id] = func
-end
+curio.registered_player_globalsteps, curio.register_player_globalstep = curio.make_registration()
 
-function curio.register_on_player_receive_fields(id, func)
-    curio.registered_on_player_receive_fields[id] = func
-end
+curio.registered_player_globalsteps_slow, curio.register_player_globalstep_slow = curio.make_registration()
 
-function curio.register_on_joinplayer(id, func)
-    curio.registered_on_joinplayer[id] = func
-end
+curio.registered_damage_modifiers, curio.register_damage_modifier = curio.make_registration()
 
-function curio.register_on_leaveplayer(id, func)
-    curio.registered_on_leaveplayer[id] = func
-end
+curio.registered_on_player_receive_fields, curio.register_on_player_receive_fields = curio.make_registration()
+
+curio.registered_on_joinplayer, curio.register_on_joinplayer = curio.make_registration()
+
+curio.registered_on_leaveplayer, curio.register_on_leaveplayer = curio.make_registration()
 
 local globalstep_slow_timer = 0
 
@@ -157,15 +164,9 @@ dig
 place
 ]]
 
-function curio.register_controls_on_press(id, func)
-    curio.registered_controls_on_press[id] = func
-end
-function curio.register_controls_on_release(id, func)
-    curio.registered_controls_on_release[id] = func
-end
-function curio.register_controls_on_hold(id, func)
-    curio.registered_controls_on_hold[id] = func
-end
+curio.registered_controls_on_press, curio.register_controls_on_press = curio.make_registration()
+curio.registered_controls_on_release, curio.register_controls_on_release = curio.make_registration()
+curio.registered_controls_on_hold, curio.register_controls_on_hold = curio.make_registration()
 controls.register_on_press(function(player, control_name)
 	-- called on initial key-press
 	-- control_name: see above
